@@ -1,0 +1,96 @@
+﻿[
+    {
+        "colors": [
+            {
+                "id": "f069d02f-34e9-483c-9c56-d2163809eb6d",
+                "color": "black",
+                "category": "hue",
+                "type": "primary",
+                "code": {
+                    "rgba": [
+                        255,
+                        255,
+                        255,
+                        1
+                    ],
+                    "hex": "#000"
+                }
+            },
+            {
+                "id": "b84b7553-88ed-4569-b543-92ea9297dad4",
+                "color": "white",
+                "category": "value",
+                "type": null,
+                "code": {
+                    "rgba": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "hex": "#FFF"
+                }
+            },
+            {
+                "id": "20845cac-91fc-429d-bf46-cb76d75377e9",
+                "color": "red",
+                "category": "hue",
+                "type": "primary",
+                "code": {
+                    "rgba": [
+                        255,
+                        0,
+                        0,
+                        1
+                    ],
+                    "hex": "#FF0"
+                }
+            },
+            {
+                "id": "2eec1ab8-d515-42af-ab57-88c04470d563",
+                "color": "blue",
+                "category": "hue",
+                "type": "primary",
+                "code": {
+                    "rgba": [
+                        0,
+                        0,
+                        255,
+                        1
+                    ],
+                    "hex": "#00F"
+                }
+            },
+            {
+                "id": "4e3f168c-77f1-41a9-8cc1-a2ae7545696e",
+                "color": "yellow",
+                "category": "hue",
+                "type": "primary",
+                "code": {
+                    "rgba": [
+                        255,
+                        255,
+                        0,
+                        1
+                    ],
+                    "hex": "#FF0"
+                }
+            },
+            {
+                "id": "6fd38e81-57ef-494f-8e06-30502cd729d2",
+                "color": "green",
+                "category": "hue",
+                "type": "secondary",
+                "code": {
+                    "rgba": [
+                        0,
+                        255,
+                        0,
+                        1
+                    ],
+                    "hex": "#0F0"
+                }
+            }
+        ]
+    }
+]
