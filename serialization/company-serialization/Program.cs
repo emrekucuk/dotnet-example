@@ -1,8 +1,6 @@
-﻿
+﻿using System.Text.Json;
 
-using System.Text.Json;
-
-CompanyModel companyModels = new CompanyModel();
+CompanyModel companyModel = new CompanyModel();
 
 var serializeOptions = new JsonSerializerOptions
 {
@@ -15,18 +13,18 @@ void ReadCompanyJson()
     var reader = new StreamReader(filePath);
     var content = reader.ReadToEnd();
 
-    var company = JsonSerializer.Deserialize<CompanyModel>(content, serializeOptions);
+    companyModel = JsonSerializer.Deserialize<CompanyModel>(content, serializeOptions);
     reader.Close();
 
 
-    System.Console.WriteLine($"{company.Id}");
-    System.Console.WriteLine($"{company.Name}");
-    company.Cofounders.ForEach((coFounder) =>
+    System.Console.WriteLine($"{companyModel.Id}");
+    System.Console.WriteLine($"{companyModel.Name}");
+    companyModel.Cofounders.ForEach((coFounder) =>
     {
         System.Console.WriteLine($"CoFounder Id: {coFounder.Id}");
         System.Console.WriteLine($"CoFounder Name: {coFounder.Name}");
     });
-    company.Employees.ForEach((employee) =>
+    companyModel.Employees.ForEach((employee) =>
     {
         System.Console.WriteLine($"Employee Id: {employee.Id}");
         System.Console.WriteLine($"Employee Full Name: {employee.FullName}");
@@ -44,4 +42,20 @@ void ReadCompanyJson()
     });
 }
 
+async void WriteCompanyOnJsonFile()
+{
+    var filePath = File.Create("new-company.json");
+    var streamWriter = new StreamWriter(filePath, System.Text.Encoding.UTF8);
+    var jsonData = JsonSerializer.Serialize(companyModel, serializeOptions);
+    await streamWriter.WriteAsync(jsonData);
+    await streamWriter.FlushAsync();
+    streamWriter.Close();
+}
+
 ReadCompanyJson();
+
+System.Console.WriteLine($"\n*******************************");
+System.Console.WriteLine($"Read Finished and Write Started");
+System.Console.WriteLine($"*******************************\n");
+
+WriteCompanyOnJsonFile();
